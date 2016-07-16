@@ -89,6 +89,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Clients.cs" />
     <Compile Include="Models\Scopes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
