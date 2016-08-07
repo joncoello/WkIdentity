@@ -9,11 +9,29 @@ namespace WkIdentity.Models {
         public static List<Scope> Get() {
             return new List<Scope>
             {
-            new Scope
-            {
-                Name = "api1"
-            }
-        };
+                 new Scope
+                {
+                    Name = "api1",
+
+                    DisplayName = "Access to API",
+                    Description = "This will grant you access to the API",
+
+                    ScopeSecrets = new List<Secret>
+                    {
+                        new Secret("api-secret".Sha256())
+                    },
+
+                    Type = ScopeType.Resource,
+
+                },
+
+                StandardScopes.OpenId,
+                StandardScopes.Profile,
+            
+                // additional
+                StandardScopes.Email
+
+            };
         }
     }
 }

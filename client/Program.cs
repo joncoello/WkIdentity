@@ -16,7 +16,7 @@ namespace client {
 
             t = GetUserToken();
             CallApi(t);
-
+            
             Console.ReadKey();
 
         }
@@ -38,7 +38,7 @@ namespace client {
 
             return client.RequestResourceOwnerPasswordAsync("bob", "secret", "api1").Result;
         }
-
+        
         static void CallApi(TokenResponse response) {
             var client = new HttpClient();
             client.SetBearerToken(response.AccessToken);

@@ -1,0 +1,33 @@
+{
+  "name": "oidc-token-manager",
+  "version": "1.2.0",
+  "homepage": "https://github.com/IdentityModel/oidc-token-manager",
+  "authors": [
+    "Brock Allen <brockallen@gmail.com>",
+    "Dominick Baier <dbaier@leastprivilege.com>"
+  ],
+  "description": "Library to manage tokens obtained via OpenID Connect (OIDC)",
+  "main": "dist/oidc-token-manager.js",
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "sample"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "oidc-client": "~0.3.3"
+  },
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.0",
+    "commit": "51ecf0fc4d370e688df7181fc57eca2550bcdd58"
+  },
+  "_source": "https://github.com/IdentityModel/oidc-token-manager.git",
+  "_target": "1.2.0",
+  "_originalSource": "oidc-token-manager"
+}

@@ -48,6 +48,51 @@ namespace WkIdentity.Models {
                     {
                         "api1"
                     }
+                },
+
+                 // implicit
+                new Client {
+                    ClientName = "implicit Client",
+                    ClientId = "implicit",
+                    Enabled = true,
+
+                    Flow = Flows.Implicit,
+
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("21B5F798-BE55-42BC-8AA8-0025B903DC3Z".Sha256())
+                    },
+
+                    AllowedScopes = new List<string>
+                    {
+                        "api1"
+                    }
+                },
+
+                new Client
+                {
+                    Enabled = true,
+                    ClientName = "JS Client",
+                    ClientId = "js",
+                    Flow = Flows.Implicit,
+
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:55473/popup.html"
+                    },
+
+                    AllowedCorsOrigins = new List<string>
+                    {
+                        "http://localhost:55473"
+                    },
+
+                    //AllowAccessToAllScopes = true
+
+                    AllowedScopes = new List<string>
+                    {
+                        "openid", "profile", "email", "api1"
+                    }
+
                 }
 
             };

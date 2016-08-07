@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Application</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        .main-container {
+            padding-top: 70px;
+        }
+
+        pre:empty {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">JS Application</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="list-inline list-unstyled requests">
+                    <li><a href="index.html" class="btn btn-primary">Home</a></li>
+                    <li><button type="button" class="btn btn-default js-login">Login</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Make this panel 6-column wide -->
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">ID Token Contents</div>
+                    <div class="panel-body">
+                        <pre class="js-id-token"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- and create this new one for the access token -->
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Access Token</div>
+                    <div class="panel-body">
+                        <pre class="js-access-token"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/oidc-token-manager/dist/oidc-token-manager.js"></script>
+
+    <script>
+        // helper function to show data to the user
+        function display(selector, data) {
+            if (data && typeof data === 'string') {
+                data = JSON.parse(data);
+            }
+            if (data) {
+                data = JSON.stringify(data, null, 2);
+            }
+
+            $(selector).text(data);
+        }
+
+        var settings = {
+            authority: 'http://localhost:44333',
+            client_id: 'js',
+            popup_redirect_uri: 'http://localhost:55473/popup.html',
+
+            response_type: 'id_token token',
+            scope: 'openid profile email api1',
+
+            filter_protocol_claims: true
+        };
+
+        var manager = new OidcTokenManager(settings);
+
+        $('.js-login').click(function () {
+            manager.openPopupForTokenAsync()
+                .then(function () {
+                    display('.js-id-token', manager.profile);
+
+                    display('.js-access-token', { access_token: manager.access_token, expires_in: manager.expires_in });
+                }, function (error) {
+                    console.error(error);
+                });
+        });
+    </script>
+
+</body>
+</html>
