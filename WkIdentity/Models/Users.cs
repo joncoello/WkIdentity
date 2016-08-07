@@ -1,7 +1,9 @@
-﻿using IdentityServer3.Core.Services.InMemory;
+﻿using IdentityServer3.Core;
+using IdentityServer3.Core.Services.InMemory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 
 namespace WkIdentity.Models {
@@ -13,7 +15,15 @@ namespace WkIdentity.Models {
             {
                 Username = "bob",
                 Password = "secret",
-                Subject = "1"
+                Subject = "1",
+
+                Claims = new[]
+                {
+                    new Claim(Constants.ClaimTypes.GivenName, "Bob"),
+                    new Claim(Constants.ClaimTypes.FamilyName, "Smith"),
+                    new Claim(Constants.ClaimTypes.Email, "bob.smith@email.com")
+                }
+
             },
             new InMemoryUser
             {

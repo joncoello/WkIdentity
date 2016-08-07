@@ -11,6 +11,7 @@ namespace WkResource.Controllers
     [Route("test")]
     public class TestController : ApiController {
         public IHttpActionResult Get() {
+
             var caller = User as ClaimsPrincipal;
 
             var subjectClaim = caller.FindFirst("sub");

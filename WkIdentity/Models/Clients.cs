@@ -86,7 +86,7 @@ namespace WkIdentity.Models {
                         "http://localhost:55473"
                     },
 
-                    //AllowAccessToAllScopes = true
+                    AllowAccessToAllScopes = true,
 
                     AllowedScopes = new List<string>
                     {
