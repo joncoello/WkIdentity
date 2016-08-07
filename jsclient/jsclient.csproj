@@ -69,6 +69,8 @@
     <Content Include="packages.config" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <None Include="Properties\PublishProfiles\WkJsClient - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\WkJsClient - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
