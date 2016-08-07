@@ -78,12 +78,12 @@ namespace WkIdentity.Models {
 
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:55473/popup.html"
+                        "http://wkjsclient.azurewebsites.net/popup.html"
                     },
 
                     AllowedCorsOrigins = new List<string>
                     {
-                        "http://localhost:55473"
+                        "http://wkjsclient.azurewebsites.net"
                     },
 
                     AllowAccessToAllScopes = true,

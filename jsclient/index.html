@@ -88,7 +88,7 @@
         var settings = {
             authority: 'http://wkidentity.azurewebsites.net',
             client_id: 'js',
-            popup_redirect_uri: 'http://localhost:55473/popup.html',
+            popup_redirect_uri: 'http://wkjsclient.azurewebsites.net/popup.html',
 
             response_type: 'id_token token',
             scope: 'openid profile email api1',
@@ -116,7 +116,7 @@
             }
 
             $.ajax({
-                url: 'http://localhost:45329/test',
+                url: 'http://wkresource.azurewebsites.net/test',
                 method: 'GET',
                 dataType: 'json',
                 headers: headers
