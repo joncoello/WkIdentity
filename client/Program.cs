@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 namespace client {
     class Program {
 
+        private const string TOKEN_ENDPOINT = "http://localhost:44333/connect/token";
+        //private const string TOKEN_ENDPOINT = "http://wkidentity.azurewebsites.net/connect/token";
+
+        private const string RESOURCE_ENDPOINT = "http://localhost:45329/test";
+        //private const string RESOURCE_ENDPOINT = "http://wkresource.azurewebsites.net/test";
+
         static void Main(string[] args) {
 
             var t = GetClientToken();
@@ -23,7 +29,7 @@ namespace client {
 
         static TokenResponse GetClientToken() {
             var client = new TokenClient(
-                "http://wkidentity.azurewebsites.net/connect/token",
+                TOKEN_ENDPOINT,
                 "silicon",
                 "F621F470-9731-4A25-80EF-67A6F7C5F4B8");
 
@@ -32,7 +38,7 @@ namespace client {
 
         static TokenResponse GetUserToken() {
             var client = new TokenClient(
-                "http://wkidentity.azurewebsites.net/connect/token",
+                TOKEN_ENDPOINT,
                 "carbon",
                 "21B5F798-BE55-42BC-8AA8-0025B903DC3B");
 
@@ -43,7 +49,7 @@ namespace client {
             var client = new HttpClient();
             client.SetBearerToken(response.AccessToken);
 
-            Console.WriteLine(client.GetStringAsync("http://wkresource.azurewebsites.net/test").Result);
+            Console.WriteLine(client.GetStringAsync(RESOURCE_ENDPOINT).Result);
         }
 
     }

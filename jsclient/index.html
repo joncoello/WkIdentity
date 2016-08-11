@@ -73,6 +73,15 @@
     <script src="bower_components/oidc-token-manager/dist/oidc-token-manager.js"></script>
 
     <script>
+
+        //var authority_address = 'http://wkidentity.azurewebsites.net';
+        //var jsclient_address = 'http://wkjsclient.azurewebsites.net/popup.html';
+        //var resource_address = 'http://wkresource.azurewebsites.net/test';
+
+        var authority_address = 'http://localhost:44333';
+        var jsclient_address = 'http://localhost:55473/popup.html';
+        var resource_address = 'http://localhost:45329/test';
+
         // helper function to show data to the user
         function display(selector, data) {
             if (data && typeof data === 'string') {
@@ -86,9 +95,9 @@
         }
 
         var settings = {
-            authority: 'http://wkidentity.azurewebsites.net',
+            authority: authority_address,
             client_id: 'js',
-            popup_redirect_uri: 'http://wkjsclient.azurewebsites.net/popup.html',
+            popup_redirect_uri: jsclient_address,
 
             response_type: 'id_token token',
             scope: 'openid profile email api1',
@@ -116,7 +125,7 @@
             }
 
             $.ajax({
-                url: 'http://wkresource.azurewebsites.net/test',
+                url: resource_address,
                 method: 'GET',
                 dataType: 'json',
                 headers: headers

@@ -15,12 +15,7 @@ namespace WkIdentity.Models {
 
                     DisplayName = "Access to API",
                     Description = "This will grant you access to the API",
-
-                    ScopeSecrets = new List<Secret>
-                    {
-                        new Secret("api-secret".Sha256())
-                    },
-
+                    
                     Type = ScopeType.Resource,
 
                 },

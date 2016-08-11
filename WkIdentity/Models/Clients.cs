@@ -6,6 +6,10 @@ using System.Web;
 
 namespace WkIdentity.Models {
     static class Clients {
+
+        private const string JS_CLIENT_ADDRESS = "http://localhost:55473";
+        //private const string JS_CLIENT_ADDRESS = "http://wkjsclient.azurewebsites.net";
+
         public static List<Client> Get() {
             return new List<Client>
             {
@@ -78,12 +82,12 @@ namespace WkIdentity.Models {
 
                     RedirectUris = new List<string>
                     {
-                        "http://wkjsclient.azurewebsites.net/popup.html"
+                        JS_CLIENT_ADDRESS + "/popup.html"
                     },
 
                     AllowedCorsOrigins = new List<string>
                     {
-                        "http://wkjsclient.azurewebsites.net"
+                        JS_CLIENT_ADDRESS
                     },
 
                     AllowAccessToAllScopes = true,
