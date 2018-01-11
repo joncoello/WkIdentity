@@ -7,8 +7,8 @@ using System.Web;
 namespace WkIdentity.Models {
     static class Clients {
 
-        private const string JS_CLIENT_ADDRESS = "http://localhost:55473";
-        //private const string JS_CLIENT_ADDRESS = "http://wkjsclient.azurewebsites.net";
+        //private const string JS_CLIENT_ADDRESS = "http://localhost:55473";
+        private const string JS_CLIENT_ADDRESS = "http://wkjsclient.azurewebsites.net";
 
         public static List<Client> Get() {
             return new List<Client>

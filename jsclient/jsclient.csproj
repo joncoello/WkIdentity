@@ -279,7 +279,9 @@
     <Content Include="bower_components\oidc-token-manager\LICENSE" />
     <Content Include="bower_components\oidc-token-manager\package.json" />
     <Content Include="bower_components\oidc-token-manager\README.md" />
+    <None Include="Properties\PublishProfiles\wkjsclient - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\WkJsClient - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\wkjsclient - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\WkJsClient - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

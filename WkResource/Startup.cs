@@ -18,7 +18,7 @@ namespace WkResource {
 
             // accept access tokens from identityserver and require a scope of 'api1'
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions {
-                Authority = "http://localhost:44333/", //wkidentity.azurewebsites.net
+                Authority = "http://wkidentity.azurewebsites.net/", //localhost:44333
                 RequiredScopes = new[] { "api1" }
             });
 
